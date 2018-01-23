@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE74838E201763E200BF6A2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE74838D201763E200BF6A2C /* LoginViewController.swift */; };
+		EE748390201764A200BF6A2C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE74838F201764A200BF6A2C /* Settings.swift */; };
+		EE8422141E31842700396ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8422131E31842700396ABB /* AppDelegate.swift */; };
+		EE8422191E31842700396ABB /* Main-old.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE8422171E31842700396ABB /* Main-old.storyboard */; };
+		EE84221B1E31842700396ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE84221A1E31842700396ABB /* Assets.xcassets */; };
+		EE84221E1E31842700396ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE84221C1E31842700396ABB /* LaunchScreen.storyboard */; };
+		EE8422291E31842700396ABB /* NingoSdkReferenceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8422281E31842700396ABB /* NingoSdkReferenceAppTests.swift */; };
+		EE8422341E31842700396ABB /* NingoSdkReferenceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8422331E31842700396ABB /* NingoSdkReferenceAppUITests.swift */; };
+		EE8422AD1E318D2400396ABB /* NingoSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8422A91E318D1200396ABB /* NingoSdk.framework */; };
+		EE8422AE1E318D2400396ABB /* NingoSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE8422A91E318D1200396ABB /* NingoSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EEC958D52012A623006A4E33 /* PermissionRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958D12012A622006A4E33 /* PermissionRequester.swift */; };
+		EEC958D62012A623006A4E33 /* BeaconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958D22012A622006A4E33 /* BeaconListViewController.swift */; };
+		EEC958D72012A623006A4E33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958D32012A622006A4E33 /* ViewController.swift */; };
+		EEC958D82012A623006A4E33 /* TrackedBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958D42012A623006A4E33 /* TrackedBeacon.swift */; };
+		EEC958DB2012A63D006A4E33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC958D92012A63D006A4E33 /* Main.storyboard */; };
+		EEC958EB20160308006A4E33 /* BeaconTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958EA20160308006A4E33 /* BeaconTracker.swift */; };
+		EEC958ED201613B0006A4E33 /* BeaconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958EC201613B0006A4E33 /* BeaconCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE8422251E31842700396ABB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE8422081E31842700396ABB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE84220F1E31842700396ABB;
+			remoteInfo = NingoSdkReferenceApp;
+		};
+		EE8422301E31842700396ABB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE8422081E31842700396ABB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE84220F1E31842700396ABB;
+			remoteInfo = NingoSdkReferenceApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EE8422AF1E318D2400396ABB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EE8422AE1E318D2400396ABB /* NingoSdk.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EE74838D201763E200BF6A2C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EE74838F201764A200BF6A2C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		EE8422101E31842700396ABB /* NingoSdkReferenceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NingoSdkReferenceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE8422131E31842700396ABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE8422181E31842700396ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main-old.storyboard"; sourceTree = "<group>"; };
+		EE84221A1E31842700396ABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE84221D1E31842700396ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE84221F1E31842700396ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE8422241E31842700396ABB /* NingoSdkReferenceAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NingoSdkReferenceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE8422281E31842700396ABB /* NingoSdkReferenceAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NingoSdkReferenceAppTests.swift; sourceTree = "<group>"; };
+		EE84222A1E31842700396ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE84222F1E31842700396ABB /* NingoSdkReferenceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NingoSdkReferenceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE8422331E31842700396ABB /* NingoSdkReferenceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NingoSdkReferenceAppUITests.swift; sourceTree = "<group>"; };
+		EE8422351E31842700396ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE8422A71E318C9D00396ABB /* NingoSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NingoSdk.framework; path = "../NingoSdk/build/Debug-iphoneos/NingoSdk.framework"; sourceTree = "<group>"; };
+		EE8422A91E318D1200396ABB /* NingoSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NingoSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC958D12012A622006A4E33 /* PermissionRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PermissionRequester.swift; path = ../../../BeaconScanner/BeaconScanner/PermissionRequester.swift; sourceTree = "<group>"; };
+		EEC958D22012A622006A4E33 /* BeaconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeaconListViewController.swift; path = ../../../BeaconScanner/BeaconScanner/BeaconListViewController.swift; sourceTree = "<group>"; };
+		EEC958D32012A622006A4E33 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../BeaconScanner/BeaconScanner/ViewController.swift; sourceTree = "<group>"; };
+		EEC958D42012A623006A4E33 /* TrackedBeacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackedBeacon.swift; path = ../../../BeaconScanner/BeaconScanner/TrackedBeacon.swift; sourceTree = "<group>"; };
+		EEC958DA2012A63D006A4E33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../BeaconScanner/BeaconScanner/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EEC958EA20160308006A4E33 /* BeaconTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTracker.swift; sourceTree = "<group>"; };
+		EEC958EC201613B0006A4E33 /* BeaconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE84220D1E31842700396ABB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE8422AD1E318D2400396ABB /* NingoSdk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE8422211E31842700396ABB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE84222C1E31842700396ABB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE8422071E31842700396ABB = {
+			isa = PBXGroup;
+			children = (
+				EE8422A91E318D1200396ABB /* NingoSdk.framework */,
+				EE8422121E31842700396ABB /* NingoSdkReferenceApp */,
+				EE8422271E31842700396ABB /* NingoSdkReferenceAppTests */,
+				EE8422321E31842700396ABB /* NingoSdkReferenceAppUITests */,
+				EE8422111E31842700396ABB /* Products */,
+				EE8422A21E318C2A00396ABB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EE8422111E31842700396ABB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE8422101E31842700396ABB /* NingoSdkReferenceApp.app */,
+				EE8422241E31842700396ABB /* NingoSdkReferenceAppTests.xctest */,
+				EE84222F1E31842700396ABB /* NingoSdkReferenceAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE8422121E31842700396ABB /* NingoSdkReferenceApp */ = {
+			isa = PBXGroup;
+			children = (
+				EE74838D201763E200BF6A2C /* LoginViewController.swift */,
+				EEC958EA20160308006A4E33 /* BeaconTracker.swift */,
+				EE8422131E31842700396ABB /* AppDelegate.swift */,
+				EE8422171E31842700396ABB /* Main-old.storyboard */,
+				EEC958D92012A63D006A4E33 /* Main.storyboard */,
+				EE84221A1E31842700396ABB /* Assets.xcassets */,
+				EE84221C1E31842700396ABB /* LaunchScreen.storyboard */,
+				EE84221F1E31842700396ABB /* Info.plist */,
+				EEC958D22012A622006A4E33 /* BeaconListViewController.swift */,
+				EEC958D12012A622006A4E33 /* PermissionRequester.swift */,
+				EEC958D42012A623006A4E33 /* TrackedBeacon.swift */,
+				EEC958D32012A622006A4E33 /* ViewController.swift */,
+				EEC958EC201613B0006A4E33 /* BeaconCell.swift */,
+				EE74838F201764A200BF6A2C /* Settings.swift */,
+			);
+			path = NingoSdkReferenceApp;
+			sourceTree = "<group>";
+		};
+		EE8422271E31842700396ABB /* NingoSdkReferenceAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE8422281E31842700396ABB /* NingoSdkReferenceAppTests.swift */,
+				EE84222A1E31842700396ABB /* Info.plist */,
+			);
+			path = NingoSdkReferenceAppTests;
+			sourceTree = "<group>";
+		};
+		EE8422321E31842700396ABB /* NingoSdkReferenceAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EE8422331E31842700396ABB /* NingoSdkReferenceAppUITests.swift */,
+				EE8422351E31842700396ABB /* Info.plist */,
+			);
+			path = NingoSdkReferenceAppUITests;
+			sourceTree = "<group>";
+		};
+		EE8422A21E318C2A00396ABB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE8422A71E318C9D00396ABB /* NingoSdk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE84220F1E31842700396ABB /* NingoSdkReferenceApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE8422381E31842700396ABB /* Build configuration list for PBXNativeTarget "NingoSdkReferenceApp" */;
+			buildPhases = (
+				EE84220C1E31842700396ABB /* Sources */,
+				EE84220D1E31842700396ABB /* Frameworks */,
+				EE84220E1E31842700396ABB /* Resources */,
+				EE8422AF1E318D2400396ABB /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NingoSdkReferenceApp;
+			productName = NingoSdkReferenceApp;
+			productReference = EE8422101E31842700396ABB /* NingoSdkReferenceApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE8422231E31842700396ABB /* NingoSdkReferenceAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE84223B1E31842700396ABB /* Build configuration list for PBXNativeTarget "NingoSdkReferenceAppTests" */;
+			buildPhases = (
+				EE8422201E31842700396ABB /* Sources */,
+				EE8422211E31842700396ABB /* Frameworks */,
+				EE8422221E31842700396ABB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE8422261E31842700396ABB /* PBXTargetDependency */,
+			);
+			name = NingoSdkReferenceAppTests;
+			productName = NingoSdkReferenceAppTests;
+			productReference = EE8422241E31842700396ABB /* NingoSdkReferenceAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EE84222E1E31842700396ABB /* NingoSdkReferenceAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE84223E1E31842700396ABB /* Build configuration list for PBXNativeTarget "NingoSdkReferenceAppUITests" */;
+			buildPhases = (
+				EE84222B1E31842700396ABB /* Sources */,
+				EE84222C1E31842700396ABB /* Frameworks */,
+				EE84222D1E31842700396ABB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE8422311E31842700396ABB /* PBXTargetDependency */,
+			);
+			name = NingoSdkReferenceAppUITests;
+			productName = NingoSdkReferenceAppUITests;
+			productReference = EE84222F1E31842700396ABB /* NingoSdkReferenceAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE8422081E31842700396ABB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Altbeacon;
+				TargetAttributes = {
+					EE84220F1E31842700396ABB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = A9DFQ3872A;
+						ProvisioningStyle = Automatic;
+					};
+					EE8422231E31842700396ABB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = A9DFQ3872A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EE84220F1E31842700396ABB;
+					};
+					EE84222E1E31842700396ABB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = A9DFQ3872A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EE84220F1E31842700396ABB;
+					};
+				};
+			};
+			buildConfigurationList = EE84220B1E31842700396ABB /* Build configuration list for PBXProject "NingoSdkReferenceApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE8422071E31842700396ABB;
+			productRefGroup = EE8422111E31842700396ABB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE84220F1E31842700396ABB /* NingoSdkReferenceApp */,
+				EE8422231E31842700396ABB /* NingoSdkReferenceAppTests */,
+				EE84222E1E31842700396ABB /* NingoSdkReferenceAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE84220E1E31842700396ABB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE84221E1E31842700396ABB /* LaunchScreen.storyboard in Resources */,
+				EE84221B1E31842700396ABB /* Assets.xcassets in Resources */,
+				EE8422191E31842700396ABB /* Main-old.storyboard in Resources */,
+				EEC958DB2012A63D006A4E33 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE8422221E31842700396ABB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE84222D1E31842700396ABB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE84220C1E31842700396ABB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE8422141E31842700396ABB /* AppDelegate.swift in Sources */,
+				EEC958D52012A623006A4E33 /* PermissionRequester.swift in Sources */,
+				EEC958D72012A623006A4E33 /* ViewController.swift in Sources */,
+				EEC958D82012A623006A4E33 /* TrackedBeacon.swift in Sources */,
+				EEC958EB20160308006A4E33 /* BeaconTracker.swift in Sources */,
+				EE74838E201763E200BF6A2C /* LoginViewController.swift in Sources */,
+				EE748390201764A200BF6A2C /* Settings.swift in Sources */,
+				EEC958D62012A623006A4E33 /* BeaconListViewController.swift in Sources */,
+				EEC958ED201613B0006A4E33 /* BeaconCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE8422201E31842700396ABB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE8422291E31842700396ABB /* NingoSdkReferenceAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE84222B1E31842700396ABB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE8422341E31842700396ABB /* NingoSdkReferenceAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE8422261E31842700396ABB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE84220F1E31842700396ABB /* NingoSdkReferenceApp */;
+			targetProxy = EE8422251E31842700396ABB /* PBXContainerItemProxy */;
+		};
+		EE8422311E31842700396ABB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE84220F1E31842700396ABB /* NingoSdkReferenceApp */;
+			targetProxy = EE8422301E31842700396ABB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EE8422171E31842700396ABB /* Main-old.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE8422181E31842700396ABB /* Base */,
+			);
+			name = "Main-old.storyboard";
+			sourceTree = "<group>";
+		};
+		EE84221C1E31842700396ABB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE84221D1E31842700396ABB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EEC958D92012A63D006A4E33 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEC958DA2012A63D006A4E33 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE8422361E31842700396ABB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE8422371E31842700396ABB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE8422391E31842700396ABB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A9DFQ3872A;
+				INFOPLIST_FILE = NingoSdkReferenceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.altbeacon.NingoSdkReferenceApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		EE84223A1E31842700396ABB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A9DFQ3872A;
+				INFOPLIST_FILE = NingoSdkReferenceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.altbeacon.NingoSdkReferenceApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		EE84223C1E31842700396ABB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = A9DFQ3872A;
+				INFOPLIST_FILE = NingoSdkReferenceAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.altbeacon.NingoSdkReferenceAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NingoSdkReferenceApp.app/NingoSdkReferenceApp";
+			};
+			name = Debug;
+		};
+		EE84223D1E31842700396ABB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = A9DFQ3872A;
+				INFOPLIST_FILE = NingoSdkReferenceAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.altbeacon.NingoSdkReferenceAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NingoSdkReferenceApp.app/NingoSdkReferenceApp";
+			};
+			name = Release;
+		};
+		EE84223F1E31842700396ABB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = A9DFQ3872A;
+				INFOPLIST_FILE = NingoSdkReferenceAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.altbeacon.NingoSdkReferenceAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = NingoSdkReferenceApp;
+			};
+			name = Debug;
+		};
+		EE8422401E31842700396ABB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = A9DFQ3872A;
+				INFOPLIST_FILE = NingoSdkReferenceAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.altbeacon.NingoSdkReferenceAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = NingoSdkReferenceApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE84220B1E31842700396ABB /* Build configuration list for PBXProject "NingoSdkReferenceApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE8422361E31842700396ABB /* Debug */,
+				EE8422371E31842700396ABB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE8422381E31842700396ABB /* Build configuration list for PBXNativeTarget "NingoSdkReferenceApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE8422391E31842700396ABB /* Debug */,
+				EE84223A1E31842700396ABB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE84223B1E31842700396ABB /* Build configuration list for PBXNativeTarget "NingoSdkReferenceAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE84223C1E31842700396ABB /* Debug */,
+				EE84223D1E31842700396ABB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE84223E1E31842700396ABB /* Build configuration list for PBXNativeTarget "NingoSdkReferenceAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE84223F1E31842700396ABB /* Debug */,
+				EE8422401E31842700396ABB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE8422081E31842700396ABB /* Project object */;
+}
