@@ -127,8 +127,13 @@ class RestClient {
                     if let error = jsonDict?["error"] as? String {
                         responseError = error
                     }
-                    else if let baseError = ((jsonDict?["error"] as? [String:Any])!["base"] as? [String])?[0] {
+                    else if let baseError = ((jsonDict?["errors"] as? [String:Any])?["base"] as? [String])?.first {
                         responseError = baseError
+                    }
+                    else if let fieldNameWithError = (jsonDict?["errors"] as? [String:Any])?.keys.first {
+                        if let errorString = ((jsonDict?["errors"] as? [String:Any?])?[fieldNameWithError] as? [String])?.first {
+                            responseError = "Invalid value for \(fieldNameWithError): \(errorString)"
+                        }
                     }
                     else {
                         responseError = "Code: \(response.statusCode)"

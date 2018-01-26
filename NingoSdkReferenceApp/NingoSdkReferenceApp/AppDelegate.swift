@@ -7,18 +7,22 @@
 
 import UIKit
 import NingoSdk
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     
     var window: UIWindow?
     var log: String = ""
     var eventTextView: UITextView?
+    var locationManager: CLLocationManager?
+    var lastLocation: CLLocation?
+    var nearbyNingoBeacons: [Beacon] = []
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         NSLog("NingoSdkReferenceApp started up.")
         Settings().saveSetting(key: Settings.ningoReadonlyApiTokenKey, value: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ3cml0ZWFibGUiOmZhbHNlLCJleHAiOjQ2NjkwMjk2NTF9.2aHrvak4hwpuuvi9uOS9jwtf3ZPXd6nOSOXbDfW9Onk")
-        
+/*
         let authClient = AuthenticationClient()
         authClient.authenticate(email: "david@radiusnetworks.com", password: "Test1234") { (authToken, error) in
             if let error = error {
@@ -56,8 +60,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 })
             }
         }
-                
+ */
+        
+        // Significant location changes (e.g. cell tower changes) are used to determine when we need
+        // to re-query for nearby beacons from ne Ningo API and start monitoring for those beacon UUIDs
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.startMonitoringSignificantLocationChanges()
+        if let location = locationManager?.location {
+            lastLocation = location
+            self.updateNearbyNingoBeacons()
+        }
+        
         return true
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        NSLog("Updated location")
+        lastLocation = locations.last!
+        updateNearbyNingoBeacons()
+    }
+    
+    func updateNearbyNingoBeacons() {
+        var nearbyBeaconUuids = Set<String>()
+        let queryClient = QueryBeaconClient(authToken: Settings().getSetting(key: Settings.ningoReadonlyApiTokenKey)!)
+        queryClient.query(latitude: lastLocation!.coordinate.latitude, longitude: lastLocation!.coordinate.longitude, radiusMeters: 10000) { (beacons, errorCode, errorDetail) in
+            if let beacons = beacons {
+                self.nearbyNingoBeacons = beacons
+                for beacon in beacons {
+                    if let uuid = beacon.identifiers.first {
+                        nearbyBeaconUuids.insert(uuid)
+                    }
+                }
+            }
+            NSLog("There are now \(nearbyBeaconUuids.count) nearby beacon uuids")
+            if nearbyBeaconUuids.count > 0 {
+                BeaconTracker.shared.updateTransientUuids(uuids: nearbyBeaconUuids)
+            }
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

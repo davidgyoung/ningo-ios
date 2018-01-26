@@ -21,6 +21,9 @@
 		EEC958E520154D66006A4E33 /* MetadataV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958E420154D66006A4E33 /* MetadataV1.swift */; };
 		EEC958E720154DB5006A4E33 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958E620154DB5006A4E33 /* Location.swift */; };
 		EEC958E920154EA2006A4E33 /* InfoRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958E820154EA2006A4E33 /* InfoRecord.swift */; };
+		EED91126201A7246006661C0 /* MockableCLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED91125201A7246006661C0 /* MockableCLLocationManager.swift */; };
+		EED91128201A933A006661C0 /* MockableCLBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED91127201A933A006661C0 /* MockableCLBeacon.swift */; };
+		EED9112A201A968F006661C0 /* MockableLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED91129201A968F006661C0 /* MockableLocationManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		EEC958E420154D66006A4E33 /* MetadataV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataV1.swift; sourceTree = "<group>"; };
 		EEC958E620154DB5006A4E33 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		EEC958E820154EA2006A4E33 /* InfoRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRecord.swift; sourceTree = "<group>"; };
+		EED91125201A7246006661C0 /* MockableCLLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockableCLLocationManager.swift; sourceTree = "<group>"; };
+		EED91127201A933A006661C0 /* MockableCLBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockableCLBeacon.swift; sourceTree = "<group>"; };
+		EED91129201A968F006661C0 /* MockableLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockableLocationManagerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				EEC958E420154D66006A4E33 /* MetadataV1.swift */,
 				EEC958E620154DB5006A4E33 /* Location.swift */,
 				EEC958E820154EA2006A4E33 /* InfoRecord.swift */,
+				EED91125201A7246006661C0 /* MockableCLLocationManager.swift */,
+				EED91127201A933A006661C0 /* MockableCLBeacon.swift */,
+				EED91129201A968F006661C0 /* MockableLocationManagerDelegate.swift */,
 			);
 			path = NingoSdk;
 			sourceTree = "<group>";
@@ -182,7 +191,7 @@
 					EE8422771E3185A400396ABB = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = A9DFQ3872A;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					EE8422801E3185A400396ABB = {
@@ -242,7 +251,10 @@
 				EE1CA0171E7B0600006803EC /* README.md in Sources */,
 				EEC958E320150925006A4E33 /* PostBeaconClient.swift in Sources */,
 				EEC958DF2012AD7F006A4E33 /* Beacon.swift in Sources */,
+				EED91126201A7246006661C0 /* MockableCLLocationManager.swift in Sources */,
 				EEC958E920154EA2006A4E33 /* InfoRecord.swift in Sources */,
+				EED9112A201A968F006661C0 /* MockableLocationManagerDelegate.swift in Sources */,
+				EED91128201A933A006661C0 /* MockableCLBeacon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +281,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -328,6 +341,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -379,6 +393,7 @@
 		EE84228D1E3185A400396ABB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -401,6 +416,7 @@
 		EE84228E1E3185A400396ABB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;

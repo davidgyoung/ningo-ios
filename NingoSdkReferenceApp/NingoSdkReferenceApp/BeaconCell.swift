@@ -10,6 +10,5 @@ import UIKit
 class BeaconCell: UITableViewCell {
     @IBOutlet weak var identifierLabel: UILabel!
     
-    @IBOutlet weak var secondLabel: UILabel!
-    
+    @IBOutlet weak var secondLabel: UILabel!    
 }

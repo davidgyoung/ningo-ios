@@ -7,23 +7,36 @@
 
 import CoreLocation
 import UIKit
+import NingoSdk
 
-class BeaconTracker: NSObject, CLLocationManagerDelegate {
+class BeaconTracker: NSObject, MockableCLLocationManagerDelegate {
     static let shared = BeaconTracker()
     let MaxTrackingSecs = 5.0
     var trackedBeacons: [String:TrackedBeacon] = [:]
-    var locationManager: CLLocationManager!
+    var locationManager: MockableCLLocationManager!
     var uuids: [String] = ["2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6"]
+    var transientUuids = Set<String>()
     var started = false
     
     override init() {
         super.init()
     }
     
-    public func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+    func rangedUuidCount() -> Int {
+        return locationManager?.rangedRegions.count ?? 0
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [MockableCLBeacon], in region: CLBeaconRegion) {
         for beacon in beacons {
             track(beacon: beacon)
         }
+        NotificationCenter.default.post(name: NSNotification.Name("beacons_updated"), object: nil)
+    }
+    
+    func updateTransientUuids(uuids: Set<String>) {
+        stopRangingTransientUuids()
+        transientUuids = uuids
+        startRangingTransientUuids()
         NotificationCenter.default.post(name: NSNotification.Name("beacons_updated"), object: nil)
     }
 
@@ -54,27 +67,39 @@ class BeaconTracker: NSObject, CLLocationManagerDelegate {
     
     func start() {
         if locationManager == nil {
-            locationManager = CLLocationManager()
-            locationManager.delegate = self
+            locationManager = MockableCLLocationManager()
+            locationManager.mockableDelegate = self
         }
+        startRangingTransientUuids()
         for uuid in uuids {
-            locationManager.startRangingBeacons(in: CLBeaconRegion(proximityUUID: UUID(uuidString: uuid)!, identifier: uuid))
+            if let region = BeaconTracker.makeRegion(uuidString: uuid) {
+                locationManager.startRangingBeacons(in: region)
+            }
         }
         started = true
+        #if (arch(i386) || arch(x86_64)) && (!os(macOS))
+            var beacon = MockableCLBeacon(proximityUUID: UUID(uuidString:"2f234454-cf6d-4a0f-adf2-f4911ba9ffa6")!, major: 38911, minor: 9)
+            self.track(beacon: beacon)
+            beacon = MockableCLBeacon(proximityUUID: UUID(uuidString:"f7826da6-4fa2-4e98-8024-bc5b71e0893e")!, major: 17784, minor: 47967)
+            self.track(beacon: beacon)
+            NotificationCenter.default.post(name: NSNotification.Name("beacons_updated"), object: nil)
+        #endif
     }
-
+    
     func stop() {
         if !started {
             return
         }
         for uuid in uuids {
-            locationManager.stopRangingBeacons(in: CLBeaconRegion(proximityUUID: UUID(uuidString: uuid)!, identifier: uuid))
-            
+            if let region = BeaconTracker.makeRegion(uuidString: uuid) {
+                locationManager.stopRangingBeacons(in: region)
+            }
         }
+        stopRangingTransientUuids()
         started = false
     }
     
-    func track(beacon: CLBeacon) {
+    func track(beacon: MockableCLBeacon) {
         let key = TrackedBeacon.makeKey(beacon: beacon)
         if let trackedBeacon = trackedBeacons[key] {
             trackedBeacon.beacon = beacon
@@ -103,4 +128,34 @@ class BeaconTracker: NSObject, CLLocationManagerDelegate {
             return TrackedBeacon.makeKey(beacon: a.beacon) < TrackedBeacon.makeKey(beacon: b.beacon)
         }
     }
+    
+    static func makeRegion(uuidString: String) -> CLBeaconRegion? {
+        var region: CLBeaconRegion? = nil
+        if let uuid = UUID(uuidString: uuidString) {
+            region = CLBeaconRegion(proximityUUID: uuid, identifier: uuidString)
+        }
+        return region
+    }
+    private func stopRangingTransientUuids() {
+        for uuid in transientUuids {
+            if !uuids.contains(uuid.uppercased()) {
+                // this uuid is not in the perm uuid list.  stop tracking it
+                if let region = BeaconTracker.makeRegion(uuidString: uuid) {
+                    locationManager.stopRangingBeacons(in: region)
+                }
+            }
+        }
+    }
+    
+    private func startRangingTransientUuids() {
+        for uuid in transientUuids {
+            if !uuids.contains(uuid.uppercased()) {
+                // this uuid is not in the perm uuid list.  stop tracking it
+                if let region = BeaconTracker.makeRegion(uuidString: uuid) {
+                    locationManager.startRangingBeacons(in: region)
+                }
+            }
+        }
+    }
+    
 }

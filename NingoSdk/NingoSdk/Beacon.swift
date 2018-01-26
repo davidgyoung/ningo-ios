@@ -9,6 +9,19 @@ import Foundation
 
 public class Beacon {
     public let identifier: String
+    public var identifiers: [String] {
+        get {
+            var ids = identifier.split(separator: "_")
+            if ids.count > 0 {
+                ids.remove(at: ids.count-1)
+            }
+            var stringIds: [String] = []
+            for id in ids {
+                stringIds.append(String(id))
+            }
+            return stringIds
+        }
+    }
     public var metadata: MetadataV1?
     public var wikiBeaconLatitude: Double?
     public var wikiBeaconLongitude: Double?
@@ -28,8 +41,11 @@ public class Beacon {
         if let identifier = beaconDict["identifier"] as? String {
             let beacon = Beacon(identifier: identifier)
             if let wikiBeaconDatum = beaconDict["wikibeacon_datum"] as? [String:Any?] {
-                beacon.wikiBeaconLatitude = wikiBeaconDatum["latitude"] as? Double
-                beacon.wikiBeaconLongitude = wikiBeaconDatum["longitude"] as? Double
+                beacon.wikiBeaconLatitude = Double(wikiBeaconDatum["latitude"] as? String ?? "")
+                beacon.wikiBeaconLongitude = Double(wikiBeaconDatum["longitude"] as? String ?? "")
+            }
+            if let metadataDict = beaconDict["metadata"] as? [String: Any?] {
+                beacon.metadata = MetadataV1.fromDict(dict: metadataDict)
             }
             return beacon
         }
@@ -49,6 +65,9 @@ public class Beacon {
     public func toDict() -> [String:Any] {
         var beacon: [String:Any] = [:]
         beacon["identifier"] = identifier
+        if let metadata = metadata {
+            beacon["metadata"] = metadata.toDict()
+        }
         return beacon
     }
 

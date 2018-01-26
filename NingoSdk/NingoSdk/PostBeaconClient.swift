@@ -19,10 +19,14 @@ public class PostBeaconClient {
         beacon: Beacon?, _ errorCode: String?, _ errorDescription: String?) -> Void ) {
         
         let jsonDict = beacon.toDict()
-        
+                
         restClient.makeRequestWithApiKey(method: "POST", urlPath: urlPath, apiKey: authToken, bodyJson: jsonDict, completionHandler: { (responseHeaders, responseJson, errorCode) in
             if errorCode != nil {
-                completionHandler(nil, errorCode, "")
+                var errorDescription: String? = nil
+                if let json = responseJson {
+                    errorDescription = json["error"] as? String
+                }
+                completionHandler(nil, errorCode, errorDescription)
             }
             else {
                 if let responseJson = responseJson {

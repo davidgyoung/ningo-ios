@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE74838E201763E200BF6A2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE74838D201763E200BF6A2C /* LoginViewController.swift */; };
 		EE748390201764A200BF6A2C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE74838F201764A200BF6A2C /* Settings.swift */; };
+		EE7483962018C66C00BF6A2C /* NingoShowBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7483952018C66C00BF6A2C /* NingoShowBeaconViewController.swift */; };
 		EE8422141E31842700396ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8422131E31842700396ABB /* AppDelegate.swift */; };
 		EE8422191E31842700396ABB /* Main-old.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE8422171E31842700396ABB /* Main-old.storyboard */; };
 		EE84221B1E31842700396ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE84221A1E31842700396ABB /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		EE74838D201763E200BF6A2C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EE74838F201764A200BF6A2C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		EE7483952018C66C00BF6A2C /* NingoShowBeaconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NingoShowBeaconViewController.swift; sourceTree = "<group>"; };
 		EE8422101E31842700396ABB /* NingoSdkReferenceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NingoSdkReferenceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8422131E31842700396ABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE8422181E31842700396ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main-old.storyboard"; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				EEC958D32012A622006A4E33 /* ViewController.swift */,
 				EEC958EC201613B0006A4E33 /* BeaconCell.swift */,
 				EE74838F201764A200BF6A2C /* Settings.swift */,
+				EE7483952018C66C00BF6A2C /* NingoShowBeaconViewController.swift */,
 			);
 			path = NingoSdkReferenceApp;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				EE8422141E31842700396ABB /* AppDelegate.swift in Sources */,
 				EEC958D52012A623006A4E33 /* PermissionRequester.swift in Sources */,
 				EEC958D72012A623006A4E33 /* ViewController.swift in Sources */,
+				EE7483962018C66C00BF6A2C /* NingoShowBeaconViewController.swift in Sources */,
 				EEC958D82012A623006A4E33 /* TrackedBeacon.swift in Sources */,
 				EEC958EB20160308006A4E33 /* BeaconTracker.swift in Sources */,
 				EE74838E201763E200BF6A2C /* LoginViewController.swift in Sources */,
