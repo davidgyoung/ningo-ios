@@ -22,45 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         NSLog("NingoSdkReferenceApp started up.")
         Settings().saveSetting(key: Settings.ningoReadonlyApiTokenKey, value: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ3cml0ZWFibGUiOmZhbHNlLCJleHAiOjQ2NjkwMjk2NTF9.2aHrvak4hwpuuvi9uOS9jwtf3ZPXd6nOSOXbDfW9Onk")
-/*
-        let authClient = AuthenticationClient()
-        authClient.authenticate(email: "david@radiusnetworks.com", password: "Test1234") { (authToken, error) in
-            if let error = error {
-                NSLog("Error logging in: \(error)")
-            }
-            else {
-                NSLog("Got an auth token: \(authToken!)")
-                let getBeaconClient = GetBeaconClient(authToken: authToken!)
-                getBeaconClient.get(identifier: "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6_1_1_ibeacon", completionHandler: { (beacon, errorCode, errorDescription) in
-                    if beacon != nil {
-                        NSLog("Got beacon: \(beacon!.identifier)")
-                        let postBeaconClient = PostBeaconClient(authToken: authToken!)
-                        postBeaconClient.post(beacon: beacon!, completionHandler: { (beacon, errorCode, errorDescription) in
-                            if beacon != nil {
-                                NSLog("Updated beacon: \(beacon!.identifier)")
-                            }
-                            else {
-                                NSLog("Error updating beacon: \(errorCode!)")
-                            }
-                        })
-
-                    }
-                    else {
-                        NSLog("Error getting beacon: \(errorCode!)")
-                    }
-                })
-                let queryBeaconClient = QueryBeaconClient(authToken: authToken!)
-                queryBeaconClient.query(latitude: 38.93, longitude: -77.28, radiusMeters: 20000.0, completionHandler: { (beacons, errorCode, errorDescription) in
-                    if beacons != nil {
-                        NSLog("Got beacons: \(beacons!.first!.identifier)")
-                    }
-                    else {
-                        NSLog("Error getting beacon: \(errorCode!)")
-                    }
-                })
-            }
-        }
- */
         
         // Significant location changes (e.g. cell tower changes) are used to determine when we need
         // to re-query for nearby beacons from ne Ningo API and start monitoring for those beacon UUIDs

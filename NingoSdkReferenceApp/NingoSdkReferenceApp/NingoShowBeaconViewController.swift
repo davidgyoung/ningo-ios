@@ -9,18 +9,23 @@
 import UIKit
 import NingoSdk
 
-class NingoShowBeaconViewController: ViewController {
+class NingoShowBeaconViewController: ViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var metadataTextView: UITextView!
     @IBOutlet weak var longitudeTextField: UITextField!
     @IBOutlet weak var latitudeTextField: UITextField!
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     @IBOutlet weak var beaconIdentifierLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var trackedBeacon: TrackedBeacon?
     var ningoBeacon: Beacon?
+    var originalViewFrame: CGRect?
     
     override func viewDidLoad() {
+        metadataTextView.delegate = self
+        latitudeTextField.delegate = self
+        longitudeTextField.delegate = self
         metadataTextView.smartQuotesType = .no
         activityIndicator.frame = CGRect(x: view.bounds.size.width/2-50, y: view.bounds.size.height/2-50, width: 100, height: 100)
         activityIndicator.isHidden = true
@@ -29,8 +34,34 @@ class NingoShowBeaconViewController: ViewController {
         }
         view.addSubview(activityIndicator)
         loadDataFromServer()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    }
+    @objc
+    func keyboardDidShow(notification: Notification) {
+        var height: CGFloat = 216.0
+        if let info = notification.userInfo {
+            if let kbSize = info[UIKeyboardFrameEndUserInfoKey] as? CGRect {
+                height = kbSize.height
+            }
+        }
+/*
+        if originalViewFrame == nil {
+            originalViewFrame = self.view.frame
+        }
+        let frame = originalViewFrame!
+        
+        let newFrame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.width, height: frame.height-height)
+        self.view.frame = newFrame
+ */
+        scrollView.contentInset.bottom = height
     }
     
+    @objc
+    func keyboardDidHide(notification: Notification) {
+        //self.view.frame = originalViewFrame!
+        scrollView.contentInset.bottom = 0
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -195,6 +226,14 @@ class NingoShowBeaconViewController: ViewController {
             })
         }
     }
- 
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        textView.resignFirstResponder()
+    }
+    
     
 }
