@@ -9,7 +9,7 @@ Documentation version 0.1
 
 ## Project Setup
 
-1. Drag the NingoSdk.framework file into your app in XCode.  (Unzip it first if necessary.)
+1. Drag the NingoSdk.framework file into your app in XCode (downloadable from https://github.com/davidgyoung/ningo-ios/releases).  (Unzip it first if necessary.)
 2. In XCode go to App -> General -> Embedded Binaries, and use the + icon to add the NingoSdk.framework binary
 3. In XCode go to App -> Build Settings, and search for "Embedded Content Contains Swift Code". Set this to Yes 
 4. Edit your project's Info.plist, adding the following entry.  Without this entry, beacons cannot be detected:
