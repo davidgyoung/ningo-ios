@@ -43,5 +43,39 @@ public class QueryBeaconClient {
             }
         })
     }
+
+    public func queryFirstIdentifiers(latitude: Double, longitude: Double, radiusMeters: Double, limit: Int, completionHandler: @escaping (_
+        firstIdentifiers: [String]?, _ errorCode: String?, _ errorDescription: String?) -> Void ) {
+        
+        let json: [String:Any] = [
+            "first_identifier_only": true,
+            "latitude": latitude,
+            "longitude": longitude,
+            "radius_meters": radiusMeters,
+            "limit": limit
+        ]
+        
+        restClient.makeRequestWithApiKey(method: "POST", urlPath: urlPath, apiKey: authToken, bodyJson: json, completionHandler: { (responseHeaders, responseJson, errorCode) in
+            if errorCode != nil {
+                completionHandler(nil, errorCode, "")
+            }
+            else {
+                if let responseJson = responseJson {
+                    
+                    if let dictArray = responseJson["beacons"] as? [[String: Any]]  {
+                        var array: [String] = []
+                        for dict in dictArray {
+                            if let firstIdentifier = dict["first_identifier"] as? String {
+                                array.append(firstIdentifier)
+                            }
+                        }
+                        completionHandler(array, errorCode, "")
+                        return
+                    }
+                }
+                completionHandler(nil, "cannot parse json", "")
+            }
+        })
+    }
     
 }

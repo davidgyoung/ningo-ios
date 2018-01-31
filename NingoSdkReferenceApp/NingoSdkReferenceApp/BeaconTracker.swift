@@ -15,7 +15,7 @@ class BeaconTracker: NSObject, MockableCLLocationManagerDelegate {
     var trackedBeacons: [String:TrackedBeacon] = [:]
     var locationManager: MockableCLLocationManager!
     var uuids: [String] = ["2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6"]
-    var transientUuids = Set<String>()
+    var transientUuids: [String] = []
     var started = false
     
     override init() {
@@ -33,7 +33,7 @@ class BeaconTracker: NSObject, MockableCLLocationManagerDelegate {
         NotificationCenter.default.post(name: NSNotification.Name("beacons_updated"), object: nil)
     }
     
-    func updateTransientUuids(uuids: Set<String>) {
+    func updateTransientUuids(uuids: [String]) {
         stopRangingTransientUuids()
         transientUuids = uuids
         startRangingTransientUuids()

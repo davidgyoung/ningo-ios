@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         NSLog("NingoSdkReferenceApp started up.")
+        // WARNING:  Do not use this authToken in your own app.  It is rate limited
+        // and subject to being disabled at any time without notice.
+        // See the README in the project root for instructions on how to generate
+        // your own authToken.
         Settings().saveSetting(key: Settings.ningoReadonlyApiTokenKey, value: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ3cml0ZWFibGUiOmZhbHNlLCJleHAiOjQ2NjkwMjk2NTF9.2aHrvak4hwpuuvi9uOS9jwtf3ZPXd6nOSOXbDfW9Onk")
         
         // Significant location changes (e.g. cell tower changes) are used to determine when we need
@@ -43,20 +47,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func updateNearbyNingoBeacons() {
-        var nearbyBeaconUuids = Set<String>()
         let queryClient = QueryBeaconClient(authToken: Settings().getSetting(key: Settings.ningoReadonlyApiTokenKey)!)
-        queryClient.query(latitude: lastLocation!.coordinate.latitude, longitude: lastLocation!.coordinate.longitude, radiusMeters: 10000) { (beacons, errorCode, errorDetail) in
+        queryClient.query(latitude: lastLocation!.coordinate.latitude, longitude: lastLocation!.coordinate.longitude, radiusMeters: 100) { (beacons, errorCode, errorDetail) in
             if let beacons = beacons {
                 self.nearbyNingoBeacons = beacons
-                for beacon in beacons {
-                    if let uuid = beacon.identifiers.first {
-                        nearbyBeaconUuids.insert(uuid)
-                    }
-                }
             }
-            NSLog("There are now \(nearbyBeaconUuids.count) nearby beacon uuids")
-            if nearbyBeaconUuids.count > 0 {
-                BeaconTracker.shared.updateTransientUuids(uuids: nearbyBeaconUuids)
+        }
+        // Get up to 1000 beacon ProximityUUIDs within 10km from our current location, so we can use these for beacon ranging
+        let latitude = lastLocation!.coordinate.latitude // 37.3525862 // 38.93
+        let longitude = lastLocation!.coordinate.latitude // -122.0496097//  //-77.22
+        queryClient.queryFirstIdentifiers(latitude: latitude, longitude: longitude, radiusMeters: 1000, limit: 100) { (proximityUUIDStrings, errorCode, errorDetail) in
+            if let proximityUUIDStrings = proximityUUIDStrings {
+                NSLog("There are now \(proximityUUIDStrings.count) nearby beacon uuids")
+                if proximityUUIDStrings.count > 0 {
+                    BeaconTracker.shared.updateTransientUuids(uuids: proximityUUIDStrings)
+                }
             }
         }
     }
