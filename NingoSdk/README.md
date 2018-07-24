@@ -1,10 +1,11 @@
 # NingoSdk
 iOS Framework for reading and writing beacon metadata over the Ningo API
 
-Documentation version 0.1
+Documentation version 0.2
 
 ## Change log
 
+0.2 Add notes about universal framework
 0.1 Initial revision for testing
 
 ## Project Setup
@@ -20,6 +21,10 @@ Documentation version 0.1
 5. For each Swift class where you are using the NingoSdk framework, add `import NingoSdk` near the top of the file.  For Objective C classes, add `#import <NingoSdk/NingoSdk.h>`
 
 One you complete the above steps, you will be able to access the SDK's classes from your app's code.
+
+## Building a Universal Framework
+
+When you build the SDK through XCode, by default it will generate a framwork for either the simulator or for iOS devices, and you won't be able to use the same framework binary for both.  In order to build a universal framwork that works on both the simulator and on iOS devices, build the NingoSDK-Universal target, then get the output NingoSDK.framwork from the `./Output/NingoSdk-Debug-iphoneuniversal/NingoSdk.framework` folder.
 
 ## Read Only and Read/Write Access
 

@@ -17,6 +17,8 @@
 # Ignore generate file
 CampaignKit/CKGeneratedVersion.h
 
+# output files for the framework are ignored
+NingoSdk/Output/
 
 #####
 # OS X temporary files that should never be committed
