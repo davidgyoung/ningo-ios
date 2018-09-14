@@ -15,7 +15,7 @@
 #########################
 
 # Ignore generate file
-CampaignKit/CKGeneratedVersion.h
+NingoSdk/NingoSdk.framework/
 
 # output files for the framework are ignored
 NingoSdk/Output/

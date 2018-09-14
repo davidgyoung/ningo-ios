@@ -78,7 +78,8 @@ class BeaconTracker: NSObject, MockableCLLocationManagerDelegate {
         }
         started = true
         #if (arch(i386) || arch(x86_64)) && (!os(macOS))
-            var beacon = MockableCLBeacon(proximityUUID: UUID(uuidString:"2f234454-cf6d-4a0f-adf2-f4911ba9ffa6")!, major: 38911, minor: 9)
+//5d6e3661-cc39-4d15-9607-29413021a082_527_6_ibeacon
+        var beacon = MockableCLBeacon(proximityUUID: UUID(uuidString:"5d6e3661-cc39-4d15-9607-29413021a082")!, major: 527, minor: 6)
             self.track(beacon: beacon)
             beacon = MockableCLBeacon(proximityUUID: UUID(uuidString:"f7826da6-4fa2-4e98-8024-bc5b71e0893e")!, major: 17784, minor: 47967)
             self.track(beacon: beacon)
