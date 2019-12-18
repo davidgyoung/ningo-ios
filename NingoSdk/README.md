@@ -1,14 +1,15 @@
 # NingoSdk
 iOS Framework for reading and writing beacon metadata over the Ningo API
 
-Documentation version 0.4
+Documentation version 0.5
 
 ## Change log
 
-0.4 Compile for Swift 4.2
-0.3 Build working unviersal framework
-0.2 Add notes about universal framework
-0.1 Initial revision for testing
+* 0.5 Comple for XCode 11.2
+* 0.4 Compile for Swift 4.2
+* 0.3 Build working unviersal framework
+* 0.2 Add notes about universal framework
+* 0.1 Initial revision for testing
 
 ## Project Setup
 
