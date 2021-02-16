@@ -1,0 +1,11 @@
+framework module NingoSdk {
+  umbrella header "NingoSdk.h"
+
+  export *
+  module * { export * }
+}
+
+module NingoSdk.Swift {
+    header "NingoSdk-Swift.h"
+    requires objc
+}

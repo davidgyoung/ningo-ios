@@ -16,8 +16,10 @@
 		EE84221E1E31842700396ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE84221C1E31842700396ABB /* LaunchScreen.storyboard */; };
 		EE8422291E31842700396ABB /* NingoSdkReferenceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8422281E31842700396ABB /* NingoSdkReferenceAppTests.swift */; };
 		EE8422341E31842700396ABB /* NingoSdkReferenceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8422331E31842700396ABB /* NingoSdkReferenceAppUITests.swift */; };
-		EE8422AD1E318D2400396ABB /* NingoSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8422A91E318D1200396ABB /* NingoSdk.framework */; };
-		EE8422AE1E318D2400396ABB /* NingoSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE8422A91E318D1200396ABB /* NingoSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EEA4E9FF214C573D0016F7F5 /* NingoSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4E9FD214C573D0016F7F5 /* NingoSdk.framework */; };
+		EEA4EA00214C573D0016F7F5 /* NingoSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4E9FD214C573D0016F7F5 /* NingoSdk.framework */; };
+		EEA4EA01214C57450016F7F5 /* NingoSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4E9FD214C573D0016F7F5 /* NingoSdk.framework */; };
+		EEA4EA02214C57450016F7F5 /* NingoSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4E9FD214C573D0016F7F5 /* NingoSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EEC958D52012A623006A4E33 /* PermissionRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958D12012A622006A4E33 /* PermissionRequester.swift */; };
 		EEC958D62012A623006A4E33 /* BeaconListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958D22012A622006A4E33 /* BeaconListViewController.swift */; };
 		EEC958D72012A623006A4E33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC958D32012A622006A4E33 /* ViewController.swift */; };
@@ -44,13 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EE8422AF1E318D2400396ABB /* Embed Frameworks */ = {
+		EEA4E9D6214C423C0016F7F5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EE8422AE1E318D2400396ABB /* NingoSdk.framework in Embed Frameworks */,
+				EEA4EA02214C57450016F7F5 /* NingoSdk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,8 +75,7 @@
 		EE84222F1E31842700396ABB /* NingoSdkReferenceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NingoSdkReferenceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8422331E31842700396ABB /* NingoSdkReferenceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NingoSdkReferenceAppUITests.swift; sourceTree = "<group>"; };
 		EE8422351E31842700396ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE8422A71E318C9D00396ABB /* NingoSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NingoSdk.framework; path = "../NingoSdk/build/Debug-iphoneos/NingoSdk.framework"; sourceTree = "<group>"; };
-		EE8422A91E318D1200396ABB /* NingoSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NingoSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEA4E9FD214C573D0016F7F5 /* NingoSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NingoSdk.framework; sourceTree = "<group>"; };
 		EEC958D12012A622006A4E33 /* PermissionRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionRequester.swift; sourceTree = "<group>"; };
 		EEC958D22012A622006A4E33 /* BeaconListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconListViewController.swift; sourceTree = "<group>"; };
 		EEC958D32012A622006A4E33 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE8422AD1E318D2400396ABB /* NingoSdk.framework in Frameworks */,
+				EEA4EA01214C57450016F7F5 /* NingoSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEA4E9FF214C573D0016F7F5 /* NingoSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEA4EA00214C573D0016F7F5 /* NingoSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +115,6 @@
 		EE8422071E31842700396ABB = {
 			isa = PBXGroup;
 			children = (
-				EE8422A91E318D1200396ABB /* NingoSdk.framework */,
 				EE8422121E31842700396ABB /* NingoSdkReferenceApp */,
 				EE8422271E31842700396ABB /* NingoSdkReferenceAppTests */,
 				EE8422321E31842700396ABB /* NingoSdkReferenceAppUITests */,
@@ -173,7 +175,7 @@
 		EE8422A21E318C2A00396ABB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE8422A71E318C9D00396ABB /* NingoSdk.framework */,
+				EEA4E9FD214C573D0016F7F5 /* NingoSdk.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -188,7 +190,8 @@
 				EE84220C1E31842700396ABB /* Sources */,
 				EE84220D1E31842700396ABB /* Frameworks */,
 				EE84220E1E31842700396ABB /* Resources */,
-				EE8422AF1E318D2400396ABB /* Embed Frameworks */,
+				EEA4E9D6214C423C0016F7F5 /* Embed Frameworks */,
+				EEA4E9E3214C49480016F7F5 /* Remove Unused Architectures */,
 			);
 			buildRules = (
 			);
@@ -310,6 +313,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EEA4E9E3214C49480016F7F5 /* Remove Unused Architectures */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Remove Unused Architectures";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FRAMEWORK=\"NingoSdk\"\nFRAMEWORK_EXECUTABLE_PATH=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/$FRAMEWORK.framework/$FRAMEWORK\"\nEXTRACTED_ARCHS=()\nfor ARCH in $ARCHS\ndo\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE84220C1E31842700396ABB /* Sources */ = {
@@ -482,10 +502,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A9DFQ3872A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NingoSdkReferenceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.altbeacon.NingoSdkReferenceApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidgyoungtech.beaconscope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -496,10 +520,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A9DFQ3872A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NingoSdkReferenceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.altbeacon.NingoSdkReferenceApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidgyoungtech.beaconscope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -511,6 +539,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = A9DFQ3872A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NingoSdkReferenceAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -527,6 +559,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = A9DFQ3872A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NingoSdkReferenceAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -542,6 +578,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = A9DFQ3872A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NingoSdkReferenceAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -557,6 +597,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = A9DFQ3872A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NingoSdkReferenceAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
